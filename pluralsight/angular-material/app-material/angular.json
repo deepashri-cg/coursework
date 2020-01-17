@@ -120,6 +120,12 @@
           }
         }
       }
-    }},
-  "defaultProject": "app-material"
+    }
+  },
+  "defaultProject": "app-material",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
