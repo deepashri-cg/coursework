@@ -1,0 +1,21 @@
+$flex-item-height: 150px;
+
+.flex-container {
+  display: flex;
+  //flex-flow: row wrap - same as below;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.flex-item {
+  width: 200px;
+  height: $flex-item-height;
+
+  background: tomato;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+  line-height: $flex-item-height;
+}
