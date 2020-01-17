@@ -5,6 +5,7 @@ $flex-item-height: 150px;
   //flex-flow: row wrap - same as below;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .flex-item {
