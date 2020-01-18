@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-
+import {RouterModule, Routes} from '@angular/router';
 import {MaterialModule} from '../shared/material.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {FormsModule} from '@angular/forms';
@@ -11,13 +11,23 @@ import {MainContentComponent} from './components/main-content/main-content.compo
 import {SidenavComponent} from './components/sidenav/sidenav.component';
 
 
+const routes: Routes = [
+  {path: '', component: ContactmanagerAppComponent,
+    children: [
+      {path: '', component: MainContentComponent}
+    ]},
+  {path: 'demo', loadChildren: './demo/demo.module#DemoModule'},
+  {path: '**', redirectTo: ''}
+];
+
 @NgModule({
   declarations: [ContactmanagerAppComponent, ToolbarComponent, MainContentComponent, SidenavComponent],
   imports: [
     CommonModule,
     MaterialModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forChild(routes)
   ]
 })
 export class ContactmanagerModule { }
