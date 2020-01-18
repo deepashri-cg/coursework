@@ -16,7 +16,6 @@ const routes: Routes = [
     children: [
       {path: '', component: MainContentComponent}
     ]},
-  {path: 'demo', loadChildren: './demo/demo.module#DemoModule'},
   {path: '**', redirectTo: ''}
 ];
 
