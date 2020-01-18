@@ -11,6 +11,7 @@ $flex-item-height: 150px;
 .flex-item {
   width: 200px;
   height: $flex-item-height;
+  margin-top: 5px;
 
   background: tomato;
   color: white;
