@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, NgZone, OnInit} from '@angular/core';
 
 const SMALL_WIDTH_BREAKPOINT = 720;
 
@@ -11,7 +11,9 @@ export class SidenavComponent implements OnInit {
 
   private mediaMatcher: MediaQueryList = matchMedia(`(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`);
 
-  constructor() {
+  constructor(zone: NgZone) {
+    // This was added in the course. But our sidenav works even without this
+    // this.mediaMatcher.addListener(mql => zone.run(() => this.mediaMatcher = mql));
   }
 
   ngOnInit() {
