@@ -8,9 +8,16 @@ $flex-item-height: 150px;
   justify-content: space-around;
 }
 
+@media all and (max-width: 800px) {
+  .flex-container {
+    justify-content: flex-start;
+  }
+}
+
 .flex-item {
   width: 200px;
   height: $flex-item-height;
+  margin-top: 5px;
 
   background: tomato;
   color: white;
