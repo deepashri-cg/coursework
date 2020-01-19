@@ -1,6 +1,6 @@
 <mat-sidenav-container class="app-sidenav-container">
   <mat-sidenav #sidenav class="app-sidenav"
-               opened="true"
+               [opened]="!isScreenSmall()"
                mode="side">
     <mat-toolbar color="primary">
       Contacts
