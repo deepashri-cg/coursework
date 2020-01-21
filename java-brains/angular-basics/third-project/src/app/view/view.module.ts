@@ -1,12 +1,13 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {ViewCompComponent} from './view-comp/view-comp.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [ViewCompComponent],
   imports: [
     CommonModule
   ]
 })
-export class ViewModule { }
+export class ViewModule {
+}
