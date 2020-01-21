@@ -7,6 +7,9 @@ import {ViewCompComponent} from './view-comp/view-comp.component';
   declarations: [ViewCompComponent],
   imports: [
     CommonModule
+  ],
+  exports: [
+    ViewCompComponent
   ]
 })
 export class ViewModule {
