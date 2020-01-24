@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {TestService} from './services/test.service';
 
 @Component({
@@ -9,10 +9,9 @@ import {TestService} from './services/test.service';
 export class AppComponent {
   title = 'third-project';
 
-  constructor() {
-    const svc = new TestService();
-    svc.printToConsole('hello');
-
+  // Test service is injected here
+  constructor(service: TestService) {
+    service.printToConsole('Got the service');
   }
 
 }
