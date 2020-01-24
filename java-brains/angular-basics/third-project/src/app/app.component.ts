@@ -7,11 +7,11 @@ import {TestService} from './services/test.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'third-project';
-
+  private service: TestService;
   // Test service is injected here
   constructor(service: TestService) {
-    service.printToConsole('Got the service');
+    this.service = service;
+    this.service.printToConsole('Got the service');
   }
 
 }
