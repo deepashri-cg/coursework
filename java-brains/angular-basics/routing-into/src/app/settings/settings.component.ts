@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-settings',
@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsComponent implements OnInit {
 
-  constructor() { }
+  routes = [
+    {linkName: 'Profile', url: 'profile'},
+    {linkName: 'Contact', url: 'contact'}
+  ];
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
