@@ -4,7 +4,7 @@
 </label>
 <button (click)="search()">Search</button>
 
-
-<p>Login Name: {{response?.login}}</p>
-<p>Number of repos: {{response?.public_repos}}</p>
-
+<div *ngIf="response">
+  <p>Login Name: {{response.login}}</p>
+  <p>Number of repos: {{response.public_repos}}</p>
+</div>
