@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get('https://api.github.com/users/deepashri-cg');
+    const observable = this.http.get('https://api.github.com/users/deepashri-cg');
+    observable.subscribe(() => console.log('Got the response'));
   }
-
 }
