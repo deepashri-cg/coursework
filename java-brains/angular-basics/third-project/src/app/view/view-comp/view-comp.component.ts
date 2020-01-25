@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {TestService} from '../../services/test.service';
 
 @Component({
   selector: 'app-view-comp',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-comp.component.css']
 })
 export class ViewCompComponent implements OnInit {
+  private readonly msg: string;
 
-  constructor() { }
+  constructor(private service: TestService) {
+    this.msg = 'Calling service from inner module view component';
+    service.printToConsole(this.msg);
+  }
 
   ngOnInit() {
   }
-
 }
