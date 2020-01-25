@@ -1,10 +1,10 @@
 <label>
   User Name:
-  <input type="text" [(ngModel)]="userName">
+  <input [(ngModel)]="userName" type="text">
 </label>
 <button (click)="search()">Search</button>
 
-<div *ngIf="response">
-  <p>Login Name: {{response.login}}</p>
-  <p>Number of repos: {{response.public_repos}}</p>
-</div>
+
+<p>Login Name: {{response?.login}}</p>
+<p>Number of repos: {{response?.public_repos}}</p>
+
