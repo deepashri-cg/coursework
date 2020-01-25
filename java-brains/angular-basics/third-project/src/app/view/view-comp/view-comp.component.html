@@ -3,3 +3,8 @@
   <input type="text" [(ngModel)]="userName">
 </label>
 <button (click)="search()">Search</button>
+
+<div *ngIf="response">
+  <p>Login Name: {{response.login}}</p>
+  <p>Number of repos: {{response.public_repos}}</p>
+</div>
