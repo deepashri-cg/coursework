@@ -1,1 +1,10 @@
-<p>view-comp works!</p>
+<label>
+  User Name:
+  <input [(ngModel)]="userName" type="text">
+</label>
+<button (click)="search()">Search</button>
+
+<div *ngIf="response">
+  <p>Login Name: {{response.login}}</p>
+  <p>Number of repos: {{response.public_repos}}</p>
+</div>
