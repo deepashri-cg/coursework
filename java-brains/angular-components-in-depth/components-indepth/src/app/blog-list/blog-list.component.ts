@@ -8,11 +8,12 @@ import {BlogPost} from '../blog-post';
 })
 export class BlogListComponent implements OnInit {
   blogPosts: BlogPost[][];
-
+  currentPage: number;
   constructor() {
   }
 
   ngOnInit() {
+    this.currentPage = 0;
     this.blogPosts = [
       [
         {
