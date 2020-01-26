@@ -1,4 +1,4 @@
 export class BlogPost {
-  constructor(public title: string, public summary1: string) {
+  constructor(public title: string, public summary: string) {
   }
 }
