@@ -1,3 +1,5 @@
-<app-blog-post-tile [post]="blogPosts[0]"></app-blog-post-tile>
-<app-blog-post-tile [post]="blogPosts[1]"></app-blog-post-tile>
-<app-blog-post-tile [post]="blogPosts[2]"></app-blog-post-tile>
+<app-blog-post-tile
+  *ngFor="let post of blogPosts"
+  [post]="post">
+</app-blog-post-tile>
+
