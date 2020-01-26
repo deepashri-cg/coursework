@@ -7,10 +7,12 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class PaginatorComponent implements OnInit {
   @Input() noOfPages;
+  pages: number[];
 
   constructor() { }
 
   ngOnInit() {
+    this.pages = new Array(this.noOfPages);
   }
 
 }
