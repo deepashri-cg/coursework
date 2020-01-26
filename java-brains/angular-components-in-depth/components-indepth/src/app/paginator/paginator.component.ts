@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-paginator',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./paginator.component.scss']
 })
 export class PaginatorComponent implements OnInit {
+  @Input() noOfPages;
 
   constructor() { }
 
