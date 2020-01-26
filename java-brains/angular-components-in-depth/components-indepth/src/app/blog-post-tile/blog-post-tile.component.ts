@@ -14,8 +14,7 @@ export class BlogPostTileComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.title = 'Blog Title';
-    this.summary = 'Blog post summary';
+
   }
 
 }
