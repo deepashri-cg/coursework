@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, QueryList, ViewChildren} from '@angular/core';
 import {BlogPost} from '../blog-post';
 import {BlogPostTileComponent} from '../blog-post-tile/blog-post-tile.component';
 
@@ -10,7 +10,8 @@ import {BlogPostTileComponent} from '../blog-post-tile/blog-post-tile.component'
 export class BlogListComponent implements OnInit {
   blogPosts: BlogPost[][];
   currentPage: number;
-  @ViewChild('tile', {static: false}) blogPostTileComponent: BlogPostTileComponent;
+  @ViewChildren('tile') blogPostTileComponents: QueryList<BlogPostTileComponent>;
+
   constructor() {
   }
 
@@ -79,6 +80,7 @@ export class BlogListComponent implements OnInit {
   }
 
   expandAll() {
-    this.blogPostTileComponent.showFullSummary();
+    this.blogPostTileComponents
+      .forEach(e => e.showFullSummary());
   }
 }
