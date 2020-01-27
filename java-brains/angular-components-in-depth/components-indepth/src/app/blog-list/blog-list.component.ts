@@ -29,4 +29,9 @@ export class BlogListComponent implements OnInit {
     this.blogPostTileComponents
       .forEach(e => e.showFullSummary());
   }
+
+  favAll() {
+    this.blogPosts[this.currentPage]
+      .forEach(post => post.isFav = true);
+  }
 }
