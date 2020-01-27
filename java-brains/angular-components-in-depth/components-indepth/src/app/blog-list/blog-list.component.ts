@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {BlogPost} from '../blog-post';
+import {BlogPostTileComponent} from '../blog-post-tile/blog-post-tile.component';
 
 @Component({
   selector: 'app-blog-list',
@@ -9,6 +10,7 @@ import {BlogPost} from '../blog-post';
 export class BlogListComponent implements OnInit {
   blogPosts: BlogPost[][];
   currentPage: number;
+  @ViewChild('tile', {static: false}) blogPostTileComponent: BlogPostTileComponent;
   constructor() {
   }
 
@@ -18,7 +20,7 @@ export class BlogListComponent implements OnInit {
       [
         {
           title: 'Blog Post 1',
-          summary: 'Summary 1'
+          summary: 'Summary 1 Lorem ipsum dolor sit amet orci aliquam.'
         },
         {
           title: 'Blog Post 2',
@@ -77,6 +79,6 @@ export class BlogListComponent implements OnInit {
   }
 
   expandAll() {
-
+    this.blogPostTileComponent.showFullSummary();
   }
 }
