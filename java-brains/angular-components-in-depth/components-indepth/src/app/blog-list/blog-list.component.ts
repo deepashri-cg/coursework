@@ -75,4 +75,8 @@ export class BlogListComponent implements OnInit {
   updatePage(newPage) {
     this.currentPage = newPage;
   }
+
+  expandAll() {
+
+  }
 }
