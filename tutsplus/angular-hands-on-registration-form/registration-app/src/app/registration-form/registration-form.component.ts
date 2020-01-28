@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Country, RegistrationRequest} from './registration-request';
+import {NgForm, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-registration-form',
@@ -47,10 +48,27 @@ export class RegistrationFormComponent implements OnInit {
     this.showContactError = false;
   }
 
-  public contactFieldChanged(): void {
+  public contactFieldChanged(form: NgForm): void {
     this.regRequest.pref = (this.emailFilledTelEmpty) ? this.regRequest.email
       : (this.telFilledEmailEmpty) ? this.regRequest.tel
         : '';
+
+    const emailControl = form.controls.email;
+    const telControl = form.controls.tel;
+
+    if (this.eitherFilled) {
+      emailControl.clearValidators();
+      emailControl.updateValueAndValidity();
+      telControl.clearValidators();
+      telControl.updateValueAndValidity();
+      this.showContactError = false;
+    } else if (this.bothEmpty && emailControl.touched && telControl.touched) {
+      emailControl.setValidators(Validators.required);
+      emailControl.updateValueAndValidity();
+      telControl.setValidators(Validators.required);
+      telControl.updateValueAndValidity();
+      this.showContactError = true;
+    }
   }
 
   public selectPref(pref: string): void {
