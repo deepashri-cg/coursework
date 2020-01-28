@@ -29,10 +29,22 @@
       name="tel">
     <div *ngIf="eitherFilled">
       <span>Contact Preference</span>
-      <input id="pref_email" name="pref" type="radio">
-      <label for="pref_email">Email</label>
-      <input id="pref_tel" name="pref" type="radio">
-      <label for="pref_tel">Telephone</label>
+      <input #pref_email (change)="selectPref(pref_email.value)" *ngIf="regRequest.email.length > 0"
+             [checked]="emailFilledTelEmpty || regRequest.email.length > 0"
+             [disabled]="emailFilledTelEmpty"
+             [value]="regRequest.email"
+             id="pref_email"
+             name="pref"
+             type="radio">
+      <label for="pref_email">{{regRequest.email}}</label>
+      <input #pref_tel (change)="selectPref(pref_tel.value)" *ngIf="regRequest.tel.length > 0"
+             [checked]="telFilledEmailEmpty || regRequest.tel.length > 0"
+             [disabled]="telFilledEmailEmpty"
+             [value]="regRequest.tel"
+             id="pref_tel"
+             name="pref"
+             type="radio">
+      <label for="pref_tel">{{regRequest.tel}}</label>
     </div>
 
   </fieldset>
