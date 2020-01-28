@@ -3,11 +3,11 @@
   <fieldset>
     <h2>Personal Details</h2>
     <label for="name">Name <sup>*</sup></label>
-    <input [(ngModel)]="regRequest.name" id="name" name="name" type="text">
+    <input [(ngModel)]="regRequest.name" id="name" name="name" required type="text">
     <label for="dob">Date of Birth <sup>*</sup></label>
-    <input [(ngModel)]="regRequest.dob" id="dob" name="dob" type="date">
+    <input [(ngModel)]="regRequest.dob" id="dob" name="dob" required type="date">
     <label for="nationality">Nationality <sup>*</sup></label>
-    <select [(ngModel)]="regRequest.nationality" id="nationality" name="nationality">
+    <select [(ngModel)]="regRequest.nationality" id="nationality" name="nationality" required>
       <option *ngFor="let country of countries" [value]="country.value">
         {{country.viewValue}}
       </option>
