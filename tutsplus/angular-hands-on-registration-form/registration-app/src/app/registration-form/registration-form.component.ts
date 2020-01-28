@@ -9,6 +9,7 @@ import {Country, RegistrationRequest} from './registration-request';
 export class RegistrationFormComponent implements OnInit {
   public regRequest: RegistrationRequest;
   countries: Country[];
+  showContactError: boolean;
 
   constructor() {
   }
@@ -39,7 +40,7 @@ export class RegistrationFormComponent implements OnInit {
       {viewValue: 'Indian', value: 'in'},
       {viewValue: 'British', value: 'br'}
     ];
-
+    this.showContactError = false;
   }
 
   public contactFieldChanged(): void {

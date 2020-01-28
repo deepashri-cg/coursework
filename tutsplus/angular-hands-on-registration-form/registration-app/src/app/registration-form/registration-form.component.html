@@ -18,6 +18,7 @@
       </option>
     </select>
     <small [hidden]="!touchedAndInvalid(nationality)">This field is required</small>
+
   </fieldset>
   <fieldset>
     <label for="email">Email</label>
@@ -35,6 +36,7 @@
       name="tel">
     <div *ngIf="eitherFilled">
       <span>Contact Preference</span>
+
       <input #pref_email (change)="selectPref(pref_email.value)" *ngIf="regRequest.email.length > 0"
              [checked]="emailFilledTelEmpty || regRequest.email.length > 0"
              [disabled]="emailFilledTelEmpty"
@@ -43,6 +45,7 @@
              name="pref"
              type="radio">
       <label for="pref_email">{{regRequest.email}}</label>
+
       <input #pref_tel (change)="selectPref(pref_tel.value)" *ngIf="regRequest.tel.length > 0"
              [checked]="telFilledEmailEmpty || regRequest.tel.length > 0"
              [disabled]="telFilledEmailEmpty"
@@ -52,7 +55,7 @@
              type="radio">
       <label for="pref_tel">{{regRequest.tel}}</label>
     </div>
-
+    <small [hidden]="!showContactError">Please complete one of these fields</small>
   </fieldset>
   <button>Submit</button>
 </form>
