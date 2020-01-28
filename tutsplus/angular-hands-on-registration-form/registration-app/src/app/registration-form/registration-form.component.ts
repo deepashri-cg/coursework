@@ -26,6 +26,10 @@ export class RegistrationFormComponent implements OnInit {
     return this.regRequest.tel.length > 0 && !this.regRequest.email.length;
   }
 
+  public get bothEmpty(): boolean {
+    return !this.regRequest.email.length && !this.regRequest.tel.length;
+  }
+
   ngOnInit() {
     this.regRequest = {
       name: '',
