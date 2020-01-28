@@ -27,7 +27,7 @@
       [(ngModel)]="regRequest.tel"
       id="tel"
       name="tel">
-    <div>
+    <div *ngIf="eitherFilled">
       <span>Contact Preference</span>
       <input id="pref_email" name="pref" type="radio">
       <label for="pref_email">Email</label>

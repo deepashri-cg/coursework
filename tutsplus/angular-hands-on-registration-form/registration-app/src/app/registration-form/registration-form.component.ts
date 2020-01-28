@@ -13,6 +13,10 @@ export class RegistrationFormComponent implements OnInit {
   constructor() {
   }
 
+  public get eitherFilled(): boolean {
+    return this.regRequest.email.length > 0 || this.regRequest.tel.length > 0;
+  }
+
   ngOnInit() {
     this.regRequest = {
       name: '',
