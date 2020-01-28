@@ -67,3 +67,13 @@ button {
 sup {
   color: red;
 }
+
+small {
+  color: red;
+  position: relative;
+  top: -2.75em;
+}
+
+.ng-invalid.ng-touched {
+  border-color: red;
+}
