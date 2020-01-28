@@ -42,7 +42,13 @@ export class RegistrationFormComponent implements OnInit {
 
   }
 
-  contactFieldChanged() {
+  public contactFieldChanged(): void {
+    this.regRequest.pref = (this.emailFilledTelEmpty) ? this.regRequest.email
+                          : (this.telFilledEmailEmpty) ? this.regRequest.tel
+                          : '';
+  }
 
+  public selectPref(pref: string): void {
+    this.regRequest.pref = pref;
   }
 }
