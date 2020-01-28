@@ -52,7 +52,7 @@ export class RegistrationFormComponent implements OnInit {
     this.regRequest.pref = pref;
   }
 
-  touchedAndInvalid(el: HTMLInputElement): boolean {
+  touchedAndInvalid(el: HTMLElement): boolean {
     return el.classList.contains('ng-touched') && el.classList.contains('ng-invalid');
   }
 }
