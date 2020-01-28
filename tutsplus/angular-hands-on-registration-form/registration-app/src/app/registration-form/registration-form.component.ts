@@ -44,11 +44,15 @@ export class RegistrationFormComponent implements OnInit {
 
   public contactFieldChanged(): void {
     this.regRequest.pref = (this.emailFilledTelEmpty) ? this.regRequest.email
-                          : (this.telFilledEmailEmpty) ? this.regRequest.tel
-                          : '';
+      : (this.telFilledEmailEmpty) ? this.regRequest.tel
+        : '';
   }
 
   public selectPref(pref: string): void {
     this.regRequest.pref = pref;
+  }
+
+  touchedAndInvalid(el: HTMLInputElement): boolean {
+    return el.classList.contains('ng-touched') && el.classList.contains('ng-invalid');
   }
 }

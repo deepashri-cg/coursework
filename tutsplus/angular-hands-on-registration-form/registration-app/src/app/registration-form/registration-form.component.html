@@ -4,6 +4,7 @@
     <h2>Personal Details</h2>
     <label for="name">Name <sup>*</sup></label>
     <input #name [(ngModel)]="regRequest.name" id="name" name="name" required type="text">
+    <small [hidden]="!touchedAndInvalid(name)">This field is required</small>
     <label for="dob">Date of Birth <sup>*</sup></label>
     <input #dob [(ngModel)]="regRequest.dob" id="dob" name="dob" required type="date">
     <label for="nationality">Nationality <sup>*</sup></label>
