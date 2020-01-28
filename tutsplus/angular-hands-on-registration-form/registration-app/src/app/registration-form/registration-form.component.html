@@ -3,9 +3,9 @@
   <fieldset>
     <h2>Personal Details</h2>
     <label for="name">Name <sup>*</sup></label>
-    <input id="name" name="name" type="text">
+    <input id="name" name="name" type="text" [(ngModel)]="regRequest.name">
     <label for="dob">Date of Birth <sup>*</sup></label>
-    <input id="dob" name="dob" type="date">
+    <input id="dob" name="dob" type="date" [(ngModel)]="regRequest.dob">
     <label for="nationality">Nationality <sup>*</sup></label>
     <select id="nationality" name="nationality">
       <option>American</option>
@@ -16,9 +16,9 @@
   </fieldset>
   <fieldset>
     <label for="email">Email</label>
-    <input id="email" name="email">
+    <input id="email" name="email"  [(ngModel)]="regRequest.email">
     <label for="tel">Telephone</label>
-    <input id="tel" name="tel">
+    <input id="tel" name="tel"  [(ngModel)]="regRequest.tel">
     <span>Contact Preference</span>
   </fieldset>
   <button>Submit</button>
