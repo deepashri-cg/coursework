@@ -7,11 +7,10 @@
     <label for="dob">Date of Birth <sup>*</sup></label>
     <input id="dob" name="dob" type="date" [(ngModel)]="regRequest.dob">
     <label for="nationality">Nationality <sup>*</sup></label>
-    <select id="nationality" name="nationality">
-      <option>American</option>
-      <option>British</option>
-      <option>Indian</option>
-      <option>Canadian</option>
+    <select id="nationality" name="nationality" [(ngModel)]="regRequest.nationality">
+      <option *ngFor="let country of countries" [value]="country.value">
+        {{country.viewValue}}
+      </option>
     </select>
   </fieldset>
   <fieldset>

@@ -8,6 +8,7 @@ import {RegistrationRequest} from './registration-request';
 })
 export class RegistrationFormComponent implements OnInit {
   public regRequest: RegistrationRequest;
+  countries: any[];
 
   constructor() {
   }
@@ -21,6 +22,12 @@ export class RegistrationFormComponent implements OnInit {
       pref: '',
       tel: ''
     };
+    this.countries = [
+      {viewValue: 'American', value: 'us'},
+      {viewValue: 'Indian', value: 'in'},
+      {viewValue: 'British', value: 'br'}
+    ];
+
   }
 
 }
