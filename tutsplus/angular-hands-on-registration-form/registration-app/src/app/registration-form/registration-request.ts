@@ -6,3 +6,8 @@ export interface RegistrationRequest {
   tel: string;
   pref: string;
 }
+
+export interface Country {
+  viewValue: string;
+  value: string;
+}

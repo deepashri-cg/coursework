@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {RegistrationRequest} from './registration-request';
+import {Country, RegistrationRequest} from './registration-request';
 
 @Component({
   selector: 'app-registration-form',
@@ -8,7 +8,7 @@ import {RegistrationRequest} from './registration-request';
 })
 export class RegistrationFormComponent implements OnInit {
   public regRequest: RegistrationRequest;
-  countries: any[];
+  countries: Country[];
 
   constructor() {
   }
