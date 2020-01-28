@@ -80,8 +80,17 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   submit(form: NgForm) {
-    if (form.invalid) {
-
+    if (form.invalid || this.bothEmpty) {
+      form.controls.name.markAsTouched();
+      form.controls.dob.markAsTouched();
+      form.controls.nationality.markAsTouched();
+      form.controls.email.setValidators(Validators.required);
+      form.controls.email.markAsTouched();
+      form.controls.email.updateValueAndValidity();
+      form.controls.tel.setValidators(Validators.required);
+      form.controls.tel.markAsTouched();
+      form.controls.tel.updateValueAndValidity();
+      this.showContactError = true;
     } else {
       console.log(JSON.stringify(this.regRequest));
     }
