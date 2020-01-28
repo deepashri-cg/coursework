@@ -15,10 +15,26 @@
   </fieldset>
   <fieldset>
     <label for="email">Email</label>
-    <input [(ngModel)]="regRequest.email" id="email" name="email">
+    <input
+      (blur)="contactFieldChanged()"
+      [(ngModel)]="regRequest.email"
+      id="email"
+      name="email">
     <label for="tel">Telephone</label>
-    <input [(ngModel)]="regRequest.tel" id="tel" name="tel">
-    <span>Contact Preference</span>
+
+    <input
+      (blur)="contactFieldChanged()"
+      [(ngModel)]="regRequest.tel"
+      id="tel"
+      name="tel">
+    <div>
+      <span>Contact Preference</span>
+      <input id="pref_email" name="pref" type="radio">
+      <label for="pref_email">Email</label>
+      <input id="pref_tel" name="pref" type="radio">
+      <label for="pref_tel">Telephone</label>
+    </div>
+
   </fieldset>
   <button>Submit</button>
 </form>

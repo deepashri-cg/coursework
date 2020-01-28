@@ -30,4 +30,7 @@ export class RegistrationFormComponent implements OnInit {
 
   }
 
+  contactFieldChanged() {
+
+  }
 }
