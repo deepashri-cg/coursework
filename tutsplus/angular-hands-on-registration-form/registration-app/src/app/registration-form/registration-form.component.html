@@ -2,17 +2,22 @@
   <h1>Register</h1>
   <fieldset>
     <h2>Personal Details</h2>
+
     <label for="name">Name <sup>*</sup></label>
     <input #name [(ngModel)]="regRequest.name" id="name" name="name" required type="text">
     <small [hidden]="!touchedAndInvalid(name)">This field is required</small>
+
     <label for="dob">Date of Birth <sup>*</sup></label>
     <input #dob [(ngModel)]="regRequest.dob" id="dob" name="dob" required type="date">
+    <small [hidden]="!touchedAndInvalid(dob)">This field is required</small>
+
     <label for="nationality">Nationality <sup>*</sup></label>
     <select #nationality [(ngModel)]="regRequest.nationality" id="nationality" name="nationality" required>
       <option *ngFor="let country of countries" [value]="country.value">
         {{country.viewValue}}
       </option>
     </select>
+    <small [hidden]="!touchedAndInvalid(nationality)">This field is required</small>
   </fieldset>
   <fieldset>
     <label for="email">Email</label>
