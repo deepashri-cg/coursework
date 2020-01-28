@@ -1,0 +1,61 @@
+<form #f="ngForm" (submit)="submit(f)">
+  <h1>Register</h1>
+  <fieldset>
+    <h2>Personal Details</h2>
+
+    <label for="name">Name <sup>*</sup></label>
+    <input #name [(ngModel)]="regRequest.name" id="name" name="name" required type="text">
+    <small [hidden]="!touchedAndInvalid(name)">This field is required</small>
+
+    <label for="dob">Date of Birth <sup>*</sup></label>
+    <input #dob [(ngModel)]="regRequest.dob" id="dob" name="dob" required type="date">
+    <small [hidden]="!touchedAndInvalid(dob)">This field is required</small>
+
+    <label for="nationality">Nationality <sup>*</sup></label>
+    <select #nationality [(ngModel)]="regRequest.nationality" id="nationality" name="nationality" required>
+      <option *ngFor="let country of countries" [value]="country.value">
+        {{country.viewValue}}
+      </option>
+    </select>
+    <small [hidden]="!touchedAndInvalid(nationality)">This field is required</small>
+
+  </fieldset>
+  <fieldset>
+    <label for="email">Email</label>
+    <input
+      (blur)="contactFieldChanged(f)"
+      [(ngModel)]="regRequest.email"
+      id="email"
+      name="email">
+    <label for="tel">Telephone</label>
+
+    <input
+      (blur)="contactFieldChanged(f)"
+      [(ngModel)]="regRequest.tel"
+      id="tel"
+      name="tel">
+    <div *ngIf="eitherFilled">
+      <span>Contact Preference</span>
+
+      <input #pref_email (change)="selectPref(pref_email.value)" *ngIf="regRequest.email.length > 0"
+             [checked]="emailFilledTelEmpty || regRequest.email.length > 0"
+             [disabled]="emailFilledTelEmpty"
+             [value]="regRequest.email"
+             id="pref_email"
+             name="pref"
+             type="radio">
+      <label for="pref_email">{{regRequest.email}}</label>
+
+      <input #pref_tel (change)="selectPref(pref_tel.value)" *ngIf="regRequest.tel.length > 0"
+             [checked]="telFilledEmailEmpty || regRequest.tel.length > 0"
+             [disabled]="telFilledEmailEmpty"
+             [value]="regRequest.tel"
+             id="pref_tel"
+             name="pref"
+             type="radio">
+      <label for="pref_tel">{{regRequest.tel}}</label>
+    </div>
+    <small [hidden]="!showContactError">Please complete one of these fields</small>
+  </fieldset>
+  <button>Submit</button>
+</form>
