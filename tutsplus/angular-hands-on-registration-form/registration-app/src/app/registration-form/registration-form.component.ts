@@ -78,4 +78,12 @@ export class RegistrationFormComponent implements OnInit {
   touchedAndInvalid(el: HTMLElement): boolean {
     return el.classList.contains('ng-touched') && el.classList.contains('ng-invalid');
   }
+
+  submit(form: NgForm) {
+    if (form.invalid) {
+
+    } else {
+      console.log(JSON.stringify(this.regRequest));
+    }
+  }
 }
