@@ -19,7 +19,7 @@ fieldset {
   }
 }
 
-label {
+label, span {
   display: block;
   margin-bottom: .5em;
 }
@@ -34,8 +34,19 @@ input, select {
   width: 20em;
 
   &[type="radio"] {
+    display: inline-block;
+    margin-right: .75em;
     height: auto;
     width: auto;
+
+    &+label {
+      display: inline;
+
+      &::after {
+        content: "";
+        display: block;
+      }
+    }
   }
 }
 
