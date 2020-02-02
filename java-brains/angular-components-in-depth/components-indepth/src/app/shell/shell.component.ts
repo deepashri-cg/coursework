@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ContentChild, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-shell',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShellComponent implements OnInit {
 
-  constructor() { }
+  @ContentChild('appHeader', {static: true}) headerElement;
+
+  constructor() {
+  }
 
   ngOnInit() {
+    console.log(this.headerElement);
   }
 
 }
