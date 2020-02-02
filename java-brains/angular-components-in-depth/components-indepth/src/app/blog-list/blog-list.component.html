@@ -2,14 +2,14 @@
   <h1>Heading</h1>
   <p>Paragraph</p>
 </app-card>
-
-<p>
-  <a (click)="expandAll()" href="#">Expand All</a>
-</p>
-<p>
-  <a (click)="favAll()" href="#">Favorite All</a>
-</p>
-
+<app-card>
+  <p>
+    <a (click)="expandAll()" href="#">Expand All</a>
+  </p>
+  <p>
+    <a (click)="favAll()" href="#">Favorite All</a>
+  </p>
+</app-card>
 <app-blog-post-tile #tile
                     *ngFor="let post of blogPosts[currentPage]"
                     [post]="post">
