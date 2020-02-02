@@ -8,6 +8,7 @@ import { TruncatePipe } from './pipes/truncate.pipe';
 import { PaginatorComponent } from './paginator/paginator.component';
 import {BlogDataService} from './services/blog-data.service';
 import { HighlightDirective } from './directives/highlight.directive';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HighlightDirective } from './directives/highlight.directive';
     BlogListComponent,
     TruncatePipe,
     PaginatorComponent,
-    HighlightDirective
+    HighlightDirective,
+    CardComponent
   ],
   imports: [
     BrowserModule
