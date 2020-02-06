@@ -6,8 +6,12 @@ describe('HeroesComponent (shallow tests)', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HeroesComponent]
+      declarations: [HeroesComponent],
+      providers: []
     });
     fixture = TestBed.createComponent(HeroesComponent);
+  });
+  it('should do nothing', () => {
+    expect(true).toBe(true);
   });
 });
