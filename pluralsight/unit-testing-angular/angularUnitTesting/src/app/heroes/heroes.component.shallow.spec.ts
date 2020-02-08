@@ -14,7 +14,7 @@ describe('HeroesComponent (shallow tests)', () => {
     selector: 'app-hero',
     template: '<div></div>'
   })
-  class HeroComponent {
+  class FakeHeroComponent {
     @Input() hero: Hero;
     // @Output() delete = new EventEmitter();
   }
@@ -27,7 +27,10 @@ describe('HeroesComponent (shallow tests)', () => {
     ];
     mockHeroService = jasmine.createSpyObj(['getHeroes', 'addHero', 'deleteHero']);
     TestBed.configureTestingModule({
-      declarations: [HeroesComponent],
+      declarations: [
+        HeroesComponent,
+        FakeHeroComponent
+      ],
       providers: [
         {provide: HeroService, useValue: mockHeroService}
       ],
