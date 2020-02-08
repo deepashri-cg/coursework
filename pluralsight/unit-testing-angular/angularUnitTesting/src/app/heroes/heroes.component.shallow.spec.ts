@@ -14,14 +14,9 @@ describe('HeroesComponent (shallow tests)', () => {
     selector: 'app-hero',
     template: '<div></div>'
   })
-  export class HeroComponent {
+  class HeroComponent {
     @Input() hero: Hero;
-    @Output() delete = new EventEmitter();
-
-    onDeleteClick($event): void {
-      $event.stopPropagation();
-      this.delete.next();
-    }
+    // @Output() delete = new EventEmitter();
   }
 
   beforeEach(() => {
@@ -36,7 +31,7 @@ describe('HeroesComponent (shallow tests)', () => {
       providers: [
         {provide: HeroService, useValue: mockHeroService}
       ],
-      schemas: [NO_ERRORS_SCHEMA]
+      // schemas: [NO_ERRORS_SCHEMA]
     });
     fixture = TestBed.createComponent(HeroesComponent);
   });
