@@ -1,13 +1,29 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {HeroesComponent} from './heroes.component';
-import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {Component, EventEmitter, Input, NO_ERRORS_SCHEMA, Output} from '@angular/core';
 import {HeroService} from '../hero.service';
 import {of} from 'rxjs';
+import {Hero} from '../hero';
 
 describe('HeroesComponent (shallow tests)', () => {
   let fixture: ComponentFixture<HeroesComponent>;
   let mockHeroService;
   let HEROES;
+
+  @Component({
+    selector: 'app-hero',
+    templateUrl: './hero.component.html',
+    styleUrls:  ['./hero.component.css']
+  })
+  export class HeroComponent {
+    @Input() hero: Hero;
+    @Output() delete = new EventEmitter();
+
+    onDeleteClick($event): void {
+      $event.stopPropagation();
+      this.delete.next();
+    }
+  }
 
   beforeEach(() => {
     HEROES = [
