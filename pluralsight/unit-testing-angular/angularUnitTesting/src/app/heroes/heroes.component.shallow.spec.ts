@@ -12,7 +12,7 @@ describe('HeroesComponent (shallow tests)', () => {
 
   @Component({
     selector: 'app-hero',
-    templateUrl: './hero.component.html'
+    template: '<div></div>'
   })
   export class HeroComponent {
     @Input() hero: Hero;
