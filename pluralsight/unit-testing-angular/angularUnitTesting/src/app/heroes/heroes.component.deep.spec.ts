@@ -1,6 +1,6 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {HeroesComponent} from './heroes.component';
-import {Component, Input} from '@angular/core';
+import {Component, Input, NO_ERRORS_SCHEMA} from '@angular/core';
 import {Hero} from '../hero';
 import {HeroService} from '../hero.service';
 import {HeroComponent} from '../hero/hero.component';
@@ -24,7 +24,8 @@ describe('HeroesComponent (deep tests)', () => {
       ],
       providers: [
         {provide: HeroService, useValue: mockHeroService}
-      ]
+      ],
+      schemas: [NO_ERRORS_SCHEMA]
     });
     fixture = TestBed.createComponent(HeroesComponent);
   });
