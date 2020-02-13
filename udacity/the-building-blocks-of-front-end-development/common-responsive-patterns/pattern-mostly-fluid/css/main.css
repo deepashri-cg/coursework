@@ -27,3 +27,9 @@
 .orange {
     background-color: orange;
 }
+
+@media screen and (min-width: 450px) {
+    .light_blue, .green {
+        width: 50%;
+    }
+}
