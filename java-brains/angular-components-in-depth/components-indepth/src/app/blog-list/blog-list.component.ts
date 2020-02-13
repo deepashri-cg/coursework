@@ -31,7 +31,12 @@ export class BlogListComponent implements OnInit {
   }
 
   favAll() {
-    this.blogPosts[this.currentPage]
-      .forEach(post => post.isFav = true);
+    this.blogPosts[this.currentPage] =
+      this.blogPosts[this.currentPage]
+        .map(post => ({
+          title: post.title,
+          summary: post.summary,
+          isFav: true
+        }));
   }
 }
