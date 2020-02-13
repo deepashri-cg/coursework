@@ -28,3 +28,12 @@
         width: 75%;
     }
 }
+
+@media screen and (min-width: 550px) {
+    .dark_blue, .green {
+        width: 25%;
+    }
+    .light_blue {
+        width: 50%;
+    }
+}
